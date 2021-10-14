@@ -2,25 +2,14 @@ const translate = require("translate-google");
 const request = require('node-fetch');
 
 const { URL, URLSearchParams } = require('url');
-const config = require('./config.json');
-
-const url = process.env.url || config.chat.url
-const brainID = process.env.brainID || config.chat.brainID
-const key = process.env.key || config.chat.key
-const channel = process.env.channel || config.chat.channel
-
-const traduction = process.env.TRADUCTION || config.traduction
-const inputLang = process.env.INPUTLANG || config.inputLang
-const outputLang = process.env.OUTPUTLANG || config.outputLang
-
-const mainURL = new URL(url);
+const { chat, traduction, inputLang, outputLang } = require('./config.json');
+const mainURL = new URL(chat.url);
 const urlOptions = {
-    bid: brainID,
-    key: key,
+    bid: chat.brainID,
+    key: chat.key,
     uid: null,
     msg: null
 };
-
 const handleStatus = (client, status) => {
     client.user.setStatus(status.state);
     client.user.setActivity(status.name, {
@@ -29,8 +18,8 @@ const handleStatus = (client, status) => {
 };
 
 const handleTalk = async (msg) => {
-    msg.content = msg.content.replace(/^<@!?[0-9]{1,20}> ?/i, ''); //enlevé les identification dans les messages
-    if (msg.content.length < 2 || (!isNaN(channel) && channel != msg.channel.id)) return;
+    msg.content = msg.content.replace(/^<@!?[0-9]{1,20}> ?/i, '');
+    if (msg.content.length < 2 || (!isNaN(chat.channel) && chat.channel != msg.channel.id)) return;
     msg.channel.sendTyping();
 
     if(traduction) //traduction activé ?
