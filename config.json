@@ -11,7 +11,7 @@
         "key": "",
         "channel": ""
     },
-    "traduction":false,
+    "traduction":true,
     "inputLang":"en",
     "outputLang":"fr"
 }
