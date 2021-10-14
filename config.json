@@ -1,0 +1,17 @@
+{
+    "bot_token": "",
+    "status": {
+        "state": "idle",
+        "type": "PLAYING",
+        "name": "Chat simulator"
+    },
+    "chat": {
+        "url": "http://api.brainshop.ai/get",
+        "brainID": "",
+        "key": "",
+        "channel": ""
+    },
+    "traduction":false,
+    "inputLang":"en",
+    "outputLang":"fr"
+}

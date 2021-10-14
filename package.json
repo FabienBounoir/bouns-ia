@@ -1,0 +1,24 @@
+{
+  "name": "bouns-ia",
+  "version": "1.0.0",
+  "description": "Open sourced Discord chat bot powered by brainshop.ai",
+  "main": "index.js",
+  "author": "BadbounsTV",
+  "license": "BounsCorporation",
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "discord.js",
+    "discord-chat",
+    "discord-chatbot",
+    "chat",
+    "chatbot",
+    "tutorial",
+    "javascript"
+  ],
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "node-fetch": "^2.6.1",
+    "translate-google": "^1.5.0"
+  }
+}
